@@ -1,0 +1,17 @@
+.head-block {
+	padding: rem-calc(40) 0 0;
+	background: url('../images/background-1.jpg') 0 50% no-repeat;
+	background-size: auto 100%;
+	color: #fff;
+}
+
+.head-block__title {
+	font-weight: bold;
+	font-size: rem-calc(68);
+	line-height: 1.1;
+	margin-bottom: rem-calc(9);
+}
+
+.head-block__text {
+	margin-bottom: rem-calc(60);
+}

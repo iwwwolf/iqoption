@@ -1,0 +1,35 @@
+.token-left {
+	width: 60%;
+	max-width: rem-calc(260);
+	text-transform: uppercase;
+	color: #fff;
+	font-size: rem-calc(16);
+	padding: rem-calc(10) rem-calc(28);
+	position: relative;
+	text-align: center;
+	margin: 0 auto rem-calc(50);
+	span {
+		display: block;
+	}
+	&:before,
+	&:after {
+		display: block;
+		width: rem-calc(12);
+		height: 100%;
+		border-top: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		position: absolute;
+		top: 0;
+		content: '';
+	}
+	&:before {
+		border-left: 2px solid #fff;
+		border-radius: 2px 0 0 2px;
+		left: 0;
+	}
+	&:after {
+		border-right: 2px solid #fff;
+		border-radius: 0 2px 2px 0;
+		right: 0;
+	}
+}

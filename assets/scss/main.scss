@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Regular.ttf'),
+		url('../fonts/ProximaNova-Regular.eot'),
+		url('../fonts/ProximaNova-Regular.woff');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Bold.ttf'),
+		url('../fonts/ProximaNova-Bold.eot'),
+		url('../fonts/ProximaNova-Bold.woff');
+	font-weight: bold;
+}
+
+$main-font: 'ProximaNova', sans-serif;
+
+@import 'util';
+
+html {
+	height: 100%;
+	font: normal 12px/1.167 $main-font;
+}
+body,
+html {
+	height: 100%;
+	background: #f2f5fa;
+}
+
+body {
+	min-height: 100%;
+}
+
+
+
+
+// components 
+
+@import 'logo';
+@import 'token-left';
+@import 'head-block';
+@import 'form-get';

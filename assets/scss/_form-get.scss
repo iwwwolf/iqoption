@@ -1,0 +1,21 @@
+.form-get {}
+
+.form-get__title {
+	text-align: center;
+	margin-bottom: rem-calc(20);
+}
+
+.form-get__item {
+	margin-bottom: rem-calc(22);
+}
+
+.form-get__input {
+	width: 100%;
+	height: rem-calc(58);
+	background: #fff;
+	color: #000;
+	border-radius: rem-calc(5);
+	border: none;
+	padding: 0 rem-calc(40);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}

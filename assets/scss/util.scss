@@ -1,0 +1,10 @@
+@function rem-calc($value, $base: null) {
+
+	@if $base == null {
+		$base: 18;
+	}
+
+	$value: $value / $base * 1rem;
+
+	@return $value;
+}
