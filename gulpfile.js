@@ -18,7 +18,8 @@ var path = {
         html: 'build/',
         js: 'build/js/',
         images: 'build/images/',
-        css: 'build/css/'
+        css: 'build/css/',
+        fonts: 'build/fonts/'
     },
     src: { // откуда брать
         html: 'assets/index.pug',
@@ -26,7 +27,8 @@ var path = {
         jsLibs: 'assets/libs/js/*.js',
         images: ['assets/images/*.*', 'assets/images/**/*.*'],
         style: 'assets/scss/main.scss',
-        styleLibs: 'assets/libs/css/*.css'
+        styleLibs: 'assets/libs/css/*.css',
+        fonts: 'assets/fonts/*.*'
     },
     watch: { // за чем наблюдать
         html: 'assets/components/*.pug',
@@ -82,6 +84,13 @@ gulp.task('html:build', function () {
 });
 
 
+// шрифты
+
+gulp.task('fonts', function() {
+  gulp.src(path.src.fonts)
+      .pipe(gulp.dest(path.build.fonts))
+});
+
 
 /* собрать скрипты */
 gulp.task('js:build', function () {
@@ -135,7 +144,8 @@ gulp.task('build', [
     'style:build',
     'styleLibs:build',
     'images:build',
-    'webserver'
+    'webserver',
+    'fonts'
 ]);
 
 

@@ -33,3 +33,11 @@
 		right: 0;
 	}
 }
+
+@media (min-width: 768px) {
+	.token-left {
+		width: 100%;
+		max-width: none;
+		margin: 0 0 rem-calc(120);
+	}
+}
