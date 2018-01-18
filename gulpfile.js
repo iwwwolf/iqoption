@@ -31,7 +31,7 @@ var path = {
         fonts: 'assets/fonts/*.*'
     },
     watch: { // за чем наблюдать
-        html: 'assets/components/*.pug',
+        html: ['assets/index.pug', 'assets/components/*.pug'],
         js: 'assets/js/main.js',
         jsLibs: 'assets/libs/js/*.js',
         images: 'assets/images/*.*',
