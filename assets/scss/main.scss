@@ -38,6 +38,19 @@ body {
 	max-width: rem-calc(500, 12);
 }
 
+.row {
+	margin: {
+		left: rem-calc(-15);
+		right: rem-calc(-15);
+	};
+	[class*="col-"] {
+		padding: {
+			left: rem-calc(15);
+			right: rem-calc(15);
+		};
+	}
+}
+
 
 
 
@@ -48,6 +61,7 @@ body {
 @import 'token-left';
 @import 'head-block';
 @import 'form-get';
+@import 'price-block';
 
 
 @media (min-width: 768px) {

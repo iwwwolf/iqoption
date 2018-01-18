@@ -1,0 +1,73 @@
+.price-block {
+	width: 100%;
+	box-shadow: 0 -1px rem-calc(5) rgba(0, 0, 0, 0.2);
+	background: #233578;
+	color: #fff;
+	padding: rem-calc(20);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+	
+	.btn {
+		display: block;
+		width: 100%;
+	}
+}
+
+.price-block__price {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: rem-calc(20);
+}
+
+.price-block__mining-cost {
+	background: #1b285a;
+	border: 2px solid #2e4594;
+	border-radius: rem-calc(5);
+	color: #0beb1f;
+	line-height: 2;
+	padding: rem-calc(12) rem-calc(20);
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: rem-calc(20);
+}
+
+
+@media (min-width: 500px) {
+	.price-block {
+		.row {
+			display: flex;
+			align-items: stretch;
+			justify-content: center;
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+	}
+	.price-block__price {
+		min-height: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		text-align: right;
+		margin: 0;
+	}
+
+	.price-block__mining-cost {
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.price-block {
+		.row {
+			justify-content: flex-start;
+		}
+	}
+}
