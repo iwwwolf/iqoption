@@ -1,7 +1,8 @@
 .head-block {
+  min-height: 100vh;
 	padding: rem-calc(40) 0 0;
-	background: url('../images/background-1.jpg') 0 50% no-repeat;
-	background-size: auto 100%;
+	background: url('../images/background-1.jpg') rem-calc(-100) 50% no-repeat;
+	background-size: cover;
 	color: #fff;
 }
 
@@ -9,7 +10,7 @@
 	font-weight: bold;
 	font-size: rem-calc(68);
 	line-height: 1.1;
-	margin-bottom: rem-calc(9);
+	margin-bottom: rem-calc(19);
 }
 
 .head-block__text {

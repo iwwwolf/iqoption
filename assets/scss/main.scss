@@ -35,9 +35,17 @@ body {
 
 
 
-// components 
+// components
 
+@import 'buttons';
 @import 'logo';
 @import 'token-left';
 @import 'head-block';
 @import 'form-get';
+
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+}

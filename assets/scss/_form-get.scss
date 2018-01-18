@@ -11,11 +11,19 @@
 
 .form-get__input {
 	width: 100%;
-	height: rem-calc(58);
+	height: rem-calc(60);
 	background: #fff;
 	color: #000;
 	border-radius: rem-calc(5);
 	border: none;
 	padding: 0 rem-calc(40);
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.form-get__button {
+  .btn {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
 }

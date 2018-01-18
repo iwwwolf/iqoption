@@ -1,0 +1,38 @@
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: rem-calc(5);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2;
+  padding: rem-calc(12) rem-calc(30);
+  text-transform: uppercase;
+  color: #fff;
+  background: #ff7a00;
+}
+
+.btn_submit {
+  background: linear-gradient(90deg, #ff7a00 0%, #ffa700 100%);
+  background-size: 100%;
+  position: relative;
+  z-index: 100;
+  &:before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffa700 0%, #ff7a00 100%);
+    opacity: 0;
+    border-radius: rem-calc(5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -100;
+    content: '';
+    transition: all 300ms;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
