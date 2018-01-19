@@ -36,6 +36,13 @@ body {
 	color: $font-color;
 }
 
+h1 {
+	font-weight: bold;
+	font-size: rem-calc(68);
+	line-height: 1.1;
+	margin: 0 0 rem-calc(19);
+}
+
 h2 {
 	font-size: rem-calc(32);
 	line-height: 1.125;
