@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     flatten = require('gulp-flatten'),
     gulpPug = require('gulp-pug'),
-    webserver = require('gulp-webserver');;
+    webserver = require('gulp-webserver');
 
 var path = {
     build: { // куда складывать
@@ -19,20 +19,22 @@ var path = {
         js: 'build/js/',
         images: 'build/images/',
         css: 'build/css/',
-        fonts: 'build/fonts/'
+        fonts: 'build/fonts/',
+        video: 'build/video/'
     },
     src: { // откуда брать
         html: 'assets/index.pug',
-        js: 'assets/js/main.js',
+        js: 'assets/js/script.js',
         jsLibs: 'assets/libs/js/*.js',
         images: ['assets/images/*.*', 'assets/images/**/*.*'],
         style: 'assets/scss/main.scss',
         styleLibs: 'assets/libs/css/*.css',
-        fonts: 'assets/fonts/*.*'
+        fonts: 'assets/fonts/*.*',
+        video: 'assets/video/*.*'
     },
     watch: { // за чем наблюдать
         //html: ['assets/index.pug', 'assets/components/*.pug'],
-        js: 'assets/js/main.js',
+        js: 'assets/js/script.js',
         jsLibs: 'assets/libs/js/*.js',
         images: 'assets/images/*.*',
         style: 'assets/scss/*.scss',
@@ -91,12 +93,19 @@ gulp.task('fonts', function() {
       .pipe(gulp.dest(path.build.fonts))
 });
 
+// video
+
+gulp.task('video', function() {
+  gulp.src(path.src.video)
+      .pipe(gulp.dest(path.build.video))
+});
+
 
 /* собрать скрипты */
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
         //.pipe(uglify())
-        .pipe(concat('main.min.js'))
+        .pipe(concat('script.min.js'))
         .pipe(gulp.dest(path.build.js))
 });
 // библиотеки
@@ -145,7 +154,8 @@ gulp.task('build', [
     'styleLibs:build',
     'images:build',
     'webserver',
-    'fonts'
+    'fonts',
+    'video'
 ]);
 
 

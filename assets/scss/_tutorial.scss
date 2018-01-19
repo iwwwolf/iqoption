@@ -1,0 +1,24 @@
+.tutorial__phone {
+	max-width: rem-calc(614);
+	margin: 0 auto rem-calc(68);
+	position: relative;
+}
+
+.tutorial__phone-image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.tutorial__video {
+	width: auto;
+	position: absolute;
+	top: 1rem;
+	left: rem-calc(80);
+	right: rem-calc(86);
+	video {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}

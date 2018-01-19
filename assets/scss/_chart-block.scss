@@ -1,0 +1,13 @@
+.chart-block {
+	height: rem-calc(380);
+	margin-bottom: rem-calc(50);
+	h2 {
+		margin: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.chart-block {
+		margin-bottom: rem-calc(60);
+	}
+}

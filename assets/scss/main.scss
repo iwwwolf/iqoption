@@ -15,6 +15,7 @@
 }
 
 $main-font: 'ProximaNova', sans-serif;
+$font-color: #39468a;
 
 @import 'util';
 
@@ -32,6 +33,14 @@ body {
 	min-height: 100%;
 	font: inherit;
 	font-size: 100%;
+	color: $font-color;
+}
+
+h2 {
+	font-size: rem-calc(32);
+	line-height: 1.125;
+	margin: 0 0 rem-calc(36);
+	text-align: center;
 }
 
 .container {
@@ -63,6 +72,7 @@ body {
 @import 'form-get';
 @import 'price-block';
 @import 'chart-block';
+@import 'tutorial';
 
 
 @media (min-width: 768px) {

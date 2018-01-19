@@ -11,52 +11,11 @@ html(lang="ru")
 			crossorigin="anonymous")
 
 		script(type="text/javascript", src="https://www.gstatic.com/charts/loader.js")
-		script(type="text/javascript").
-			//- Load the Visualization API and the corechart package.
-			google.charts.load('current', {'packages':['corechart']});
+		
 
-			//- Set a callback to run when the Google Visualization API is loaded.
-			google.charts.setOnLoadCallback(drawChart);
 
-			//- Callback that creates and populates a data table,
-			//- instantiates the pie chart, passes in the data and
-			//- draws it.
-			function drawChart() {
 
-				//- Create the data table.
-				var data = new google.visualization.DataTable();
-				var data = google.visualization.arrayToDataTable([
-					['Week days', 'Exchange price', 'Mining price'],
-					['Tues',  5, 6],
-					['Wed',  7, 10],
-					['Thurs',  14, 21],
-					['Fri',  24, 43],
-					['Sat',  38, 39],
-					['Sun',  47, 52],
-					['Sun',  62, 70]
-				]);
 
-				//- Set chart options
-				var options = {
-								'title':'How Much Pizza I Ate Last Night',
-								vAxis: {title: 'OTN/USD'},
-								hAxis: {title: 'EMISSION WEEK'},
-								seriesType: 'line',
-						      	series: {
-						      		1: {type: 'bars'}
-						      	},
-						      	colors: ['#24367b', '#ff9b00']
-							};
-
-				//- Instantiate and draw our chart, passing in some options.
-				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-				chart.draw(data, options);
-			}
-
-			$(window).resize(function(){
-				console.log('да всё норм')
-				drawChart();
-			});
 		link(href="css/libs.css", rel="stylesheet")
 		link(href="css/main.min.css", rel="stylesheet")
 	body
@@ -64,18 +23,8 @@ html(lang="ru")
 			include components/head-block
 			include components/price-block
 			include components/chart-block
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
+			include components/tutorial
+
 			//- include ../modules/fixed-social/module
 			//- include ../modules/header/module
 			//- block content
@@ -85,5 +34,5 @@ html(lang="ru")
 		//- файлы скриптов
 
 		//- script(type="text/javascript", defer, src="js/libs.js") 
-		//- script(type="text/javascript", defer, src="js/main.js")
+		script(type="text/javascript", src="js/script.min.js")
 		//- block scripts

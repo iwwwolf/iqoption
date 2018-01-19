@@ -7,53 +7,6 @@
     <title>iq options</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      //- Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-      
-      //- Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-      
-      //- Callback that creates and populates a data table,
-      //- instantiates the pie chart, passes in the data and
-      //- draws it.
-      function drawChart() {
-      
-      	//- Create the data table.
-      	var data = new google.visualization.DataTable();
-      	var data = google.visualization.arrayToDataTable([
-      		['Week days', 'Exchange price', 'Mining price'],
-      		['Tues',  5, 6],
-      		['Wed',  7, 10],
-      		['Thurs',  14, 21],
-      		['Fri',  24, 43],
-      		['Sat',  38, 39],
-      		['Sun',  47, 52],
-      		['Sun',  62, 70]
-      	]);
-      
-      	//- Set chart options
-      	var options = {
-      					'title':'How Much Pizza I Ate Last Night',
-      					vAxis: {title: 'OTN/USD'},
-      					hAxis: {title: 'EMISSION WEEK'},
-      					seriesType: 'line',
-      			      	series: {
-      			      		1: {type: 'bars'}
-      			      	},
-      			      	colors: ['#24367b', '#ff9b00']
-      				};
-      
-      	//- Instantiate and draw our chart, passing in some options.
-      	var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-      	chart.draw(data, options);
-      }
-      
-      $(window).resize(function(){
-      	console.log('да всё норм')
-      	drawChart();
-      });
-    </script>
     <link href="css/libs.css" rel="stylesheet">
     <link href="css/main.min.css" rel="stylesheet">
   </head>
@@ -97,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="price-block">
+      <div class="price-block" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-sm-offset-1 col-sm-3">
@@ -113,8 +66,33 @@
         </div>
       </div>
       <div class="chart-block">
-        <div id="chart_div" style="width: 100%; margin: 0 auto; height: 500px;"></div>
-      </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container">
+          <h2>Why mining now is lucrative</h2>
+          <div id="chart_div"></div>
+        </div>
+      </div>
+      <div class="tutorial">
+        <div class="container">
+          <h2>How to GET free OTN tokens</h2>
+          <div class="tutorial__phone"><img class="tutorial__phone-image" src="images/iphone.png" alt="">
+            <div class="tutorial__video">
+              <video id="video" poster="images/poster.jpg">
+                <source src="video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $('#video').on('mouseenter', function() {
+        	console.log('work')
+        	$(this).attr('controls', 'controls');
+        })
+        .on('mouseleave',function(){
+        	$(this).removeAttr('controls');
+        });
+      </script>
     </div>
+    <script type="text/javascript" src="js/script.min.js"></script>
   </body>
 </html>
