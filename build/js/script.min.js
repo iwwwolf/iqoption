@@ -1,4 +1,9 @@
 $(function(){
+
+	var winWidth = $(window).width();
+	var video = $('#video');
+
+
 	//- Load the Visualization API and the corechart package.
 	google.charts.load('current', {'packages':['corechart']});
 
@@ -40,8 +45,33 @@ $(function(){
 		chart.draw(data, options);
 	}
 
+
+
+	if(winWidth < 768) {
+		video.attr('controls', 'controls');
+	}
+
+	video.on('mouseenter', function() {
+		winWidth = $(window).width();
+		if(winWidth >= 768) {
+			$(this).attr('controls', 'controls');
+		}
+	})
+	.on('mouseleave',function(){
+		if(winWidth >= 768) {
+			$(this).removeAttr('controls');
+		}
+	});
+
+
 	$(window).resize(function(){
-		console.log('да всё норм')
+		//перерисовать график
 		drawChart();
+
+		if($(window).width() < 768) {
+			video.attr('controls', 'controls');
+		} else {
+			video.removeAttr('controls');
+		}
 	});
 });

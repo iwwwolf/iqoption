@@ -4,21 +4,64 @@
 	position: relative;
 }
 
+.tutorial__mobile-title {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: rem-calc(20);
+}
+
+.tutorial__arrow {
+	display: none;
+	width: rem-calc(166);
+	position: absolute;
+	top: 0;
+	right: 100%;
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
 .tutorial__phone-image {
-	display: block;
+	display: none;
 	width: 100%;
 	height: auto;
 }
 
 .tutorial__video {
-	width: auto;
-	position: absolute;
-	top: 1rem;
-	left: rem-calc(80);
-	right: rem-calc(86);
+	width: 100%;
 	video {
 		display: block;
 		width: 100%;
 		height: auto;
+	}
+}
+
+@media (min-width: 768px) {
+	.tutorial__mobile-title {
+		display: none;
+	}
+	
+	.tutorial__arrow {
+		display: block;
+	}
+
+	.tutorial__phone-image {
+		display: block;
+	}
+
+	.tutorial__video {
+		width: auto;
+		position: absolute;
+		top: 1rem;
+		left: rem-calc(80);
+		right: rem-calc(86);
+		video {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
 }

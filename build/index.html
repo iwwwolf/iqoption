@@ -74,7 +74,9 @@
       <div class="tutorial">
         <div class="container">
           <h2>How to GET free OTN tokens</h2>
-          <div class="tutorial__phone"><img class="tutorial__phone-image" src="images/iphone.png" alt="">
+          <div class="tutorial__mobile-title">Mining tutorial</div>
+          <div class="tutorial__phone">
+            <div class="tutorial__arrow"><img src="images/tutorial-arrow.png" alt=""></div><img class="tutorial__phone-image" src="images/iphone.png" alt="">
             <div class="tutorial__video">
               <video id="video" poster="images/poster.jpg">
                 <source src="video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
@@ -83,15 +85,6 @@
           </div>
         </div>
       </div>
-      <script>
-        $('#video').on('mouseenter', function() {
-        	console.log('work')
-        	$(this).attr('controls', 'controls');
-        })
-        .on('mouseleave',function(){
-        	$(this).removeAttr('controls');
-        });
-      </script>
     </div>
     <script type="text/javascript" src="js/script.min.js"></script>
   </body>

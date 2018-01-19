@@ -1,17 +1,12 @@
 .tutorial
 	.container
 		h2 How to GET free OTN tokens
+		.tutorial__mobile-title.
+			Mining tutorial
 		.tutorial__phone
+			.tutorial__arrow
+				img(src="images/tutorial-arrow.png", alt="")
 			img.tutorial__phone-image(src="images/iphone.png", alt="")
 			.tutorial__video
 				video#video(poster="images/poster.jpg")
 					source(src="video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-
-script.
-	$('#video').on('mouseenter', function() {
-		console.log('work')
-		$(this).attr('controls', 'controls');
-	})
-	.on('mouseleave',function(){
-		$(this).removeAttr('controls');
-	});
