@@ -8,35 +8,50 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+      //- Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawVisualization);
       
-            function drawVisualization() {
-              // Some raw data (not necessarily accurate)
-              var data = google.visualization.arrayToDataTable([
-               ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
-               ['2004/05',  165,      938,         522,             998,           450,      614.6],
-               ['2005/06',  135,      1120,        599,             1268,          288,      682],
-               ['2006/07',  157,      1167,        587,             807,           397,      623],
-               ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-               ['2008/09',  136,      691,         629,             1026,          366,      569.6]
-            ]);
+      //- Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
       
-          var options = {
-            title : 'Monthly Coffee Production by Country',
-            vAxis: {title: 'Cups'},
-            hAxis: {title: 'Month'},
-            seriesType: 'bars',
-            series: {5: {type: 'line'}}
-          };
+      //- Callback that creates and populates a data table,
+      //- instantiates the pie chart, passes in the data and
+      //- draws it.
+      function drawChart() {
       
-          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-          chart.draw(data, options);
-        }
+      	//- Create the data table.
+      	var data = new google.visualization.DataTable();
+      	var data = google.visualization.arrayToDataTable([
+      		['Week days', 'Exchange price', 'Mining price'],
+      		['Tues',  5, 6],
+      		['Wed',  7, 10],
+      		['Thurs',  14, 21],
+      		['Fri',  24, 43],
+      		['Sat',  38, 39],
+      		['Sun',  47, 52],
+      		['Sun',  62, 70]
+      	]);
+      
+      	//- Set chart options
+      	var options = {
+      					'title':'How Much Pizza I Ate Last Night',
+      					vAxis: {title: 'OTN/USD'},
+      					hAxis: {title: 'EMISSION WEEK'},
+      					seriesType: 'line',
+      			      	series: {
+      			      		1: {type: 'bars'}
+      			      	},
+      			      	colors: ['#24367b', '#ff9b00']
+      				};
+      
+      	//- Instantiate and draw our chart, passing in some options.
+      	var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+      	chart.draw(data, options);
+      }
       
       $(window).resize(function(){
       	console.log('да всё норм')
-        drawVisualization();
+      	drawChart();
       });
     </script>
     <link href="css/libs.css" rel="stylesheet">
@@ -82,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="price-block" style="display: none;">
+      <div class="price-block">
         <div class="container">
           <div class="row">
             <div class="col-sm-offset-1 col-sm-3">
@@ -99,7 +114,7 @@
       </div>
       <div class="chart-block">
         <div id="chart_div" style="width: 100%; margin: 0 auto; height: 500px;"></div>
-      </div><br><br><br><br><br><br><br><br><br><br><br>
+      </div><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </body>
 </html>

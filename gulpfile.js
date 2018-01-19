@@ -31,7 +31,7 @@ var path = {
         fonts: 'assets/fonts/*.*'
     },
     watch: { // за чем наблюдать
-        html: ['assets/index.pug', 'assets/components/*.pug'],
+        //html: ['assets/index.pug', 'assets/components/*.pug'],
         js: 'assets/js/main.js',
         jsLibs: 'assets/libs/js/*.js',
         images: 'assets/images/*.*',
@@ -151,7 +151,7 @@ gulp.task('build', [
 
 /* следить за изменениями */
 gulp.task('watch', function(){
-    watch([path.watch.html], function(event, cb) {
+    watch(['assets/index.pug', 'assets/components/*.pug'], function(event, cb) {
         gulp.start('html:build');
     });
     watch([path.watch.style], function(event, cb) {
