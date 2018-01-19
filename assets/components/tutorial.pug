@@ -1,3 +1,18 @@
+-
+	var tutSteps = [
+		{
+			'text': 'Register on IQ Option'
+		},
+		{
+			'text': 'Buy Bitcoin, Ethereum and altcoinsе'
+		},
+		{
+			'text': 'Get OTN tokens every Monday'
+		},
+		{
+			'text': 'Sell OTN on exchanges'
+		}
+	]
 .tutorial
 	.container
 		h2 How to GET free OTN tokens
@@ -10,3 +25,8 @@
 			.tutorial__video
 				video#video(poster="images/poster.jpg")
 					source(src="video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+		.tutorial__steps
+			each step, index in tutSteps
+				.tutorial__steps-item
+					.tutorial__step-number #{index + 1}
+					.tutorial__step-text= step.text

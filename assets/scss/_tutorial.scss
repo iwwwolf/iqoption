@@ -39,11 +39,59 @@
 	}
 }
 
+.tutorial__steps {
+	max-width: rem-calc(320);
+	margin: 0 auto;
+}
+
+.tutorial__steps-item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: rem-calc(50);
+	font-size: rem-calc(20);
+	font-weight: bold;
+	&:first-child {
+		.tutorial__step-number {
+			padding-right: rem-calc(5);
+		}
+	}
+}
+
+.tutorial__step-number {
+	min-width: rem-calc(66);
+	max-width: rem-calc(66);
+	text-align: center;
+	line-height: rem-calc(66);
+	font-size: rem-calc(47);
+	font-weight: bold;
+	background: url('../images/step-cloud.png') 0 0 no-repeat;
+	background-size: cover;
+	margin-right: rem-calc(30);
+}
+
+@media (min-width: 360px) {
+	.tutorial__steps {
+		max-width: rem-calc(780);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		flex: 0 0 auto;
+		margin: 0 auto;
+	}
+
+	.tutorial__steps-item {
+		min-width: 50%;
+		max-width: 50%;
+		padding: 0 rem-calc(15);
+	}
+}
+
 @media (min-width: 768px) {
 	.tutorial__mobile-title {
 		display: none;
 	}
-	
+
 	.tutorial__arrow {
 		display: block;
 	}
