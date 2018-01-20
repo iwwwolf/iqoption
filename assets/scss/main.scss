@@ -21,7 +21,7 @@ $font-color: #39468a;
 
 html {
 	height: 100%;
-	font: normal 12px/1.167 $main-font;
+	font: normal 12px/1.22 $main-font;
 }
 body,
 html {
@@ -81,6 +81,7 @@ h2 {
 @import 'chart-block';
 @import 'tutorial';
 @import 'exchanges-block';
+@import 'otn-block';
 
 
 @media (min-width: 768px) {

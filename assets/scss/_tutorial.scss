@@ -17,10 +17,20 @@
 	position: absolute;
 	top: 0;
 	right: 100%;
-	img {
+	svg {
 		display: block;
 		width: 100%;
 		height: auto;
+		overflow: visible;
+		.tut-arr {
+			font-family: $main-font;
+			font-weight: bold;
+			font-size: rem-calc(42.8555);
+		}
+		text,
+		path {
+			fill: $font-color;
+		}
 	}
 }
 
@@ -65,7 +75,7 @@
 	line-height: rem-calc(66);
 	font-size: rem-calc(47);
 	font-weight: bold;
-	background: url('../images/step-cloud.png') 0 0 no-repeat;
+	background: url('../images/step-cloud.svg') 0 0 no-repeat;
 	background-size: cover;
 	margin-right: rem-calc(30);
 }
