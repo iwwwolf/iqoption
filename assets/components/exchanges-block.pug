@@ -1,0 +1,20 @@
+-
+	var exchanges = [
+		{'name': 'bittrex'},
+		{'name': 'hitbtc'},
+		{'name': 'yobit'},
+		{'name': 'cryptopia'},
+		{'name': 'livecoin'}
+	]
+.exchanges-block
+	.container
+		h2.
+			You can sell OTN tokens on
+		.row.exchanges-block__list
+			each item, index in exchanges
+				if index == 0
+					.col-xs-6.col-sm-offset-1.col-sm-2.exchanges-block__item
+						img(src="images/exch-" + item.name + ".svg", alt= item.name)
+				else
+					.col-xs-6.col-sm-2.exchanges-block__item
+						img(src="images/exch-" + item.name + ".svg", alt= item.name)

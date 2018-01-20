@@ -1,7 +1,7 @@
 .tutorial__phone {
-	max-width: rem-calc(614);
 	margin: 0 auto rem-calc(68);
 	position: relative;
+	padding: 0 rem-calc(15);
 }
 
 .tutorial__mobile-title {
@@ -88,6 +88,11 @@
 }
 
 @media (min-width: 768px) {
+	.tutorial__phone {
+		max-width: rem-calc(614);
+		padding: 0;
+	}
+
 	.tutorial__mobile-title {
 		display: none;
 	}
