@@ -129,3 +129,11 @@ h3 {
 		width: 1500px;
 	}
 }
+
+@media (min-width: 2200px) {
+	.head-block,
+	.otn-block,
+	.footer {
+		background-size: 100% auto;
+	}
+}
