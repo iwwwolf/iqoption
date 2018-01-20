@@ -1,0 +1,49 @@
+-
+	var about = [
+		{
+			'icon': 'team',
+			'headText': '550+',
+			'text': 'professionals'
+		},
+		{
+			'icon': 'thumbs-up',
+			'headText': '21 000 000',
+			'text': 'users'
+		},
+		{
+			'icon': 'deal',
+			'headText': '43 000+',
+			'text': 'partners'
+		},
+		{
+			'icon': 'bar-chart',
+			'headText': '$11 bln',
+			'text': 'trades per year'
+		},
+		{
+			'icon': 'economy',
+			'headText': '178',
+			'text': 'countries'
+		},
+		{
+			'icon': 'money',
+			'headText': '$22 500 000',
+			'text': 'withdrawn monthly'
+		}
+	]
+
+.about
+	.container
+		h2.
+			We have Product and Team to boost OTN token!
+		.about__text
+			p.
+				OTN was created in&nbsp;partnership with the&nbsp;world leading broker IQ Option, which technically and&nbsp;financially supports the&nbsp;project and&nbsp;will ensure its&nbsp;further evolvement.
+		.about__list
+			each item in about
+				.about__list-item
+					.about__icon
+						img(src="images/about-" + item.icon + ".svg", alt="")
+					div
+						.about__list-headtext= item.headText
+						.about__list-text= item.text
