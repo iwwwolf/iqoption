@@ -35,7 +35,7 @@
                   <h3>Trade and get OTN tokens</h3>
                   <form>
                     <div class="form-get__item">
-                      <input class="form-get__input" type="text" placeholder="Your email">
+                      <input class="form-get__input _email" type="text" placeholder="Your email">
                     </div>
                     <div class="form-get__item">
                       <input class="form-get__input" type="password" placeholder="Your password">
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="price-block" style="display: none;">
+      <div class="price-block" id="priceBlock" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-sm-offset-1 col-sm-3">
@@ -60,7 +60,7 @@
               <div class="price-block__mining-cost">Mining cost: $62</div>
             </div>
             <div class="col-sm-3">
-              <button class="btn btn_primary">Start mining</button>
+              <button class="btn btn_primary" id="startBtn">Start mining</button>
             </div>
           </div>
         </div>
@@ -246,7 +246,7 @@
                 <h3>Trade and get OTN tokens</h3>
                 <form>
                   <div class="form-get__item">
-                    <input class="form-get__input" type="text" placeholder="Your email">
+                    <input class="form-get__input _email" type="text" placeholder="Your email">
                   </div>
                   <div class="form-get__item">
                     <input class="form-get__input" type="password" placeholder="Your password">

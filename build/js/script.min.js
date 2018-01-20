@@ -1,8 +1,11 @@
-$(function(){
+$(() => {
 
-	var winWidth = $(window).width();
-	var video = $('#video');
+	let winWidth = $(window).width();
+	let winHeight = $(window).height();
+	let video = $('#video');
 
+
+	// График
 
 	//- Load the Visualization API and the corechart package.
 	google.charts.load('current', {'packages':['corechart']});
@@ -46,25 +49,29 @@ $(function(){
 	}
 
 
-
+	// появление панели управления видео 
 	if(winWidth < 768) {
 		video.attr('controls', 'controls');
 	}
 
-	video.on('mouseenter', function() {
+	video.on('mouseenter', () =>  {
 		winWidth = $(window).width();
 		if(winWidth >= 768) {
 			$(this).attr('controls', 'controls');
 		}
 	})
-	.on('mouseleave',function(){
+	.on('mouseleave',() => {
 		if(winWidth >= 768) {
 			$(this).removeAttr('controls');
 		}
 	});
 
+	let firstForm = $('.head-block .form-get');
+	let formTop = firstForm.offset().top;
+	let formPosition = formTop + firstForm.height();
+	let footerFormTop = $('.footer .form-get').offset().top;
 
-	$(window).resize(function(){
+	$(window).resize(() => {
 		//перерисовать график
 		drawChart();
 
@@ -73,5 +80,41 @@ $(function(){
 		} else {
 			video.removeAttr('controls');
 		}
+
+		winHeight = $(window).height();
+		formPosition = $('.form-get').offset().top + $('.form-get').height();
+		footerFormTop = $('.footer .form-get').offset().top;
 	});
+
+	// появление блока с ценой
+
+	let winScroll;
+	let priceBlock = $('#priceBlock');
+	let footer = $('.footer');
+
+	$(window).on('scroll', () => {
+		winScroll = $(window).scrollTop();
+
+		if (winScroll < formPosition || (winScroll + winHeight) > footerFormTop) {
+			priceBlock.fadeOut();
+		} else if (winScroll > formPosition) {
+			priceBlock.fadeIn();
+		} 
+	});
+
+	// переход от блока с ценой к верхней форме
+
+	$('#startBtn').on('click', (e) => {
+		e.preventDefault();
+		$('html, body').animate({scrollTop: formTop - 100}, 400, ()=> {
+			firstForm.find('._email').focus();
+		});
+	});
+
+	// скроллинг страницы к началу
+
+	$('.footer__arrow').on('click', (e) => {
+		e.preventDefault();
+		$('html, body').animate({scrollTop: 0}, 400);
+	})
 });
