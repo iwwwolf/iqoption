@@ -70,13 +70,10 @@ gulp.task('webserver', function() {
 
 gulp.task('html:build', function () {
 
-    //var config = require(__dirname + '/assets/content.json');
 
     return gulp.src(path.src.html)
     .pipe(gulpPug({
-        // pug: pug,
         pretty: true
-        //locals: config
     }))
     .on('error', log)
     .pipe(flatten())
