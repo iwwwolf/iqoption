@@ -82,7 +82,7 @@
 
 @media (min-width: 360px) {
 	.tutorial__steps {
-		max-width: rem-calc(780);
+		max-width: none;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;

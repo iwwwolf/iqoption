@@ -41,7 +41,7 @@ $(function(){
 					};
 
 		//- Instantiate and draw our chart, passing in some options.
-		var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+		var chart = new google.visualization.ComboChart(document.getElementById('chart-div'));
 		chart.draw(data, options);
 	}
 

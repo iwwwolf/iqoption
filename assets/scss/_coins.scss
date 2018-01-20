@@ -1,0 +1,34 @@
+.coins {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 0 auto;
+	max-width: rem-calc(380);
+	margin: 0 auto rem-calc(50);
+}
+
+.coins__coin {
+	padding: 0 rem-calc(15);
+	width: 25%;
+	margin-bottom: rem-calc(30);
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (min-width: 500px) {
+	.coins {
+		max-width: none;
+	}
+
+	.coins__coin {
+		width: 20%;
+	}
+}
+
+@media (min-width: 768px) {
+	.coins {
+		margin: 0 rem-calc(-15) 0;
+	}
+}

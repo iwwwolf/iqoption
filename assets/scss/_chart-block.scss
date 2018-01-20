@@ -1,13 +1,19 @@
 .chart-block {
-	height: rem-calc(380);
-	margin-bottom: rem-calc(50);
+	
+	margin-bottom: rem-calc(70);
 	h2 {
 		margin: 0;
 	}
 }
 
+.chart-block__chart {
+	height: rem-calc(380);
+	max-width: rem-calc(700);
+	margin: 0 auto;
+}
+
 @media (min-width: 768px) {
 	.chart-block {
-		margin-bottom: rem-calc(60);
+		margin-bottom: rem-calc(100);
 	}
 }

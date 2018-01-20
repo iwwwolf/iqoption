@@ -38,7 +38,7 @@ body {
 
 h1 {
 	font-weight: bold;
-	font-size: rem-calc(68);
+	font-size: rem-calc(62);
 	line-height: 1.1;
 	margin: 0 0 rem-calc(19);
 }
@@ -48,6 +48,13 @@ h2 {
 	line-height: 1.125;
 	margin: 0 0 rem-calc(36);
 	text-align: center;
+}
+
+h3 {
+	font-size: 1rem;
+	margin: 0 0 rem-calc(20);
+	text-align: center;
+	font-weight: normal;
 }
 
 .container {
@@ -83,6 +90,8 @@ h2 {
 @import 'exchanges-block';
 @import 'otn-block';
 @import 'about';
+@import 'footer';
+@import 'coins';
 
 
 @media (min-width: 768px) {

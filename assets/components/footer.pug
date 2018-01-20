@@ -1,0 +1,33 @@
+-
+	var coins = [
+		{'name' : 'bitcoin'},
+		{'name' : 'bitcoin_cash'},
+		{'name' : 'dash'},
+		{'name' : 'ethereum'},
+		{'name' : 'ethereum_classic'},
+		{'name' : 'iota'},
+		{'name' : 'litecoin'},
+		{'name' : 'monero'},
+		{'name' : 'omisego'},
+		{'name' : 'ripple'},
+	]
+footer.footer
+	.container
+		.row.footer__head
+			.col-sm-offset-1.col-sm-5
+				h3.
+					Trade cryptocurrencies on IQ Option and get OTN tokens
+
+				.coins
+					each item in coins
+						.coins__coin
+							img(src="images/coins/" + item.name + ".png", alt= item.name)
+
+			.col-sm-4.col-sm-offset-1
+				include form-get
+		.row.footer__bottom
+			.col-sm-offset-1.col-sm-10.footer__bottom-body
+				.footer__copyright.
+					&copy; 2017 IQ Option. All rights reserved
+				a.footer__arrow(href="#")
+					img(src="images/up-arrow.svg", alt="")

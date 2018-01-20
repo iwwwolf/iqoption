@@ -25,8 +25,7 @@ var path = {
     src: { // откуда брать
         html: 'assets/index.pug',
         js: 'assets/js/script.js',
-        jsLibs: 'assets/libs/js/*.js',
-        images: ['assets/images/*.*', 'assets/images/**/*.*'],
+        //images: ['assets/images/*.*', 'assets/images/**/*.*'],
         style: 'assets/scss/main.scss',
         styleLibs: 'assets/libs/css/*.css',
         fonts: 'assets/fonts/*.*',
@@ -35,8 +34,7 @@ var path = {
     watch: { // за чем наблюдать
         //html: ['assets/index.pug', 'assets/components/*.pug'],
         js: 'assets/js/script.js',
-        jsLibs: 'assets/libs/js/*.js',
-        images: 'assets/images/*.*',
+        //images: 'assets/images/*.*',
         style: 'assets/scss/*.scss',
         styleLibs: 'assets/libs/css/*.css'
     },
@@ -108,13 +106,6 @@ gulp.task('js:build', function () {
         .pipe(concat('script.min.js'))
         .pipe(gulp.dest(path.build.js))
 });
-// библиотеки
-gulp.task('jsLibs:build', function () {
-    gulp.src(path.src.jsLibs)
-        .pipe(uglify())
-        .pipe(concat('libs.js'))
-        .pipe(gulp.dest(path.build.js))
-});
 
 /* собрать scss в css */
 gulp.task('style:build', function () {
@@ -140,7 +131,7 @@ gulp.task('styleLibs:build', function () {
 
 /* сжать картинки */
 gulp.task('images:build', function () {
-    gulp.src(path.src.images)
+    gulp.src(['assets/images/*.*', 'assets/images/**/*.*'])
         .pipe(imagemin())
         .pipe(gulp.dest(path.build.images))
 });
@@ -149,7 +140,6 @@ gulp.task('images:build', function () {
 gulp.task('build', [
     'html:build',
     'js:build',
-    'jsLibs:build',
     'style:build',
     'styleLibs:build',
     'images:build',
@@ -173,10 +163,7 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
-    watch(path.watch.jsLibs, function(event, cb) {
-        gulp.start('jsLibs:build');
-    });
-    watch([path.watch.images], function(event, cb) {
+    watch(['assets/images/*.*', 'assets/images/**/*.*'], function(event, cb) {
         gulp.start('images:build');
     });
 });
