@@ -38,6 +38,7 @@
 	display: none;
 	width: 100%;
 	height: auto;
+	position: relative;
 }
 
 .tutorial__video {
@@ -109,10 +110,20 @@
 
 	.tutorial__arrow {
 		display: block;
+		opacity: 0;
+		transform-origin: 100% 0;
+		transform: rotate(-90deg);
+		transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		will-change: opacity, transform;
+		&.visible {
+			transform: rotate(0);
+			opacity: 1;
+		}
 	}
 
 	.tutorial__phone-image {
 		display: block;
+		z-index: 1;
 	}
 
 	.tutorial__video {
@@ -121,6 +132,7 @@
 		top: 1rem;
 		left: rem-calc(80);
 		right: rem-calc(86);
+		z-index: 1;
 		video {
 			display: block;
 			width: 100%;

@@ -54,13 +54,13 @@ $(() => {
 		video.attr('controls', 'controls');
 	}
 
-	video.on('mouseenter', () =>  {
+	video.on('mouseenter', function() {
 		winWidth = $(window).width();
 		if(winWidth >= 768) {
 			$(this).attr('controls', 'controls');
 		}
 	})
-	.on('mouseleave',() => {
+	.on('mouseleave', function() {
 		if(winWidth >= 768) {
 			$(this).removeAttr('controls');
 		}
@@ -70,6 +70,11 @@ $(() => {
 	let formTop = firstForm.offset().top;
 	let formPosition = formTop + firstForm.height();
 	let footerFormTop = $('.footer .form-get').offset().top;
+
+	//переменные для анимаций
+
+	let tutorialArrow = $('#tutorialArrow');
+	let tutorialArrowTop = tutorialArrow.offset().top;
 
 	$(window).resize(() => {
 		//перерисовать график
@@ -84,13 +89,16 @@ $(() => {
 		winHeight = $(window).height();
 		formPosition = $('.form-get').offset().top + $('.form-get').height();
 		footerFormTop = $('.footer .form-get').offset().top;
+
+		let tutorialArrowTop = tutorialArrow.offset().top;
 	});
 
-	// появление блока с ценой
+	// появление блока с ценой и разные анимации при скроллинге
 
 	let winScroll;
 	let priceBlock = $('#priceBlock');
 	let footer = $('.footer');
+
 
 	$(window).on('scroll', () => {
 		winScroll = $(window).scrollTop();
@@ -99,7 +107,12 @@ $(() => {
 			priceBlock.fadeOut();
 		} else if (winScroll > formPosition) {
 			priceBlock.fadeIn();
-		} 
+		}
+
+		if(winScroll + winHeight - 400 > tutorialArrowTop) {
+			console.log(tutorialArrow)
+			tutorialArrow.addClass('visible');
+		}
 	});
 
 	// переход от блока с ценой к верхней форме
@@ -117,6 +130,8 @@ $(() => {
 		e.preventDefault();
 		$('html, body').animate({scrollTop: 0}, 400);
 	});
+
+	// валидация
 
 	$.getJSON( 'js/errors.json', function( data ) {
 
@@ -151,10 +166,5 @@ $(() => {
 				// }
 			});
 		});
-	  
-
 	});
-
-	
-	
 });
