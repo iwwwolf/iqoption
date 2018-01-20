@@ -116,5 +116,45 @@ $(() => {
 	$('.footer__arrow').on('click', (e) => {
 		e.preventDefault();
 		$('html, body').animate({scrollTop: 0}, 400);
-	})
+	});
+
+	$.getJSON( 'js/errors.json', function( data ) {
+
+		let formGetArr = document.querySelectorAll('.form-get__form');
+
+		//тексты ошибок
+		let emptyField = data.emptyField;
+		let emailFormat = data.emailFormat;
+
+		$.each( formGetArr, function( index, item ) {
+			$(item).validate({
+				rules: {
+					email: {
+						required: true,
+						email: true
+					},
+					password: {
+						required: true
+					}
+				},
+				messages: {
+					email: {
+						required: emptyField,
+						email: emailFormat
+					},
+					password: {
+						required: emptyField
+					}
+				}
+				// submitHandler: function(form) {
+				// 	form.submit();
+				// }
+			});
+		});
+	  
+
+	});
+
+	
+	
 });

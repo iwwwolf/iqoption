@@ -5,7 +5,7 @@
 	background-size: cover;
 	color: #fff;
 	margin-bottom: rem-calc(80);
-	.container {
+	&>.container {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -26,6 +26,9 @@
 		flex-basis: 100%;
 		display: flex;
 		align-items: center;
+	}
+	.container {
+		padding: 0;
 	}
 }
 

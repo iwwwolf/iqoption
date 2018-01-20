@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iq options</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
     <link href="css/libs.css" rel="stylesheet">
     <link href="css/main.min.css" rel="stylesheet">
   </head>
@@ -25,25 +27,27 @@
             </div>
           </div>
           <div class="head-block__row">
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-5">
-                <h1>Buy cryptos - get free tokens</h1>
-                <div class="head-block__text">Trade cryptocurrencies on IQ Option and get OTN tokens</div>
-              </div>
-              <div class="col-sm-4 col-sm-offset-1">
-                <div class="form-get">
-                  <h3>Trade and get OTN tokens</h3>
-                  <form>
-                    <div class="form-get__item">
-                      <input class="form-get__input _email" type="text" placeholder="Your email">
-                    </div>
-                    <div class="form-get__item">
-                      <input class="form-get__input" type="password" placeholder="Your password">
-                    </div>
-                    <div class="form-get__button">
-                      <button class="btn btn_submit" type="submit">Get OTN tokens</button>
-                    </div>
-                  </form>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-offset-1 col-sm-5">
+                  <h1>Buy cryptos - get free tokens</h1>
+                  <div class="head-block__text">Trade cryptocurrencies on IQ Option and get OTN tokens</div>
+                </div>
+                <div class="col-sm-4 col-sm-offset-1">
+                  <div class="form-get">
+                    <h3>Trade and get OTN tokens</h3>
+                    <form class="form-get__form" method="get" action="">
+                      <div class="form-get__item">
+                        <input class="form-get__input _email" type="email" name="email" placeholder="Your email" required>
+                      </div>
+                      <div class="form-get__item">
+                        <input class="form-get__input" type="password" name="password" placeholder="Your password" required>
+                      </div>
+                      <div class="form-get__button">
+                        <button class="btn btn_submit" type="submit">Get OTN tokens</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -244,12 +248,12 @@
             <div class="col-sm-4 col-sm-offset-1">
               <div class="form-get">
                 <h3>Trade and get OTN tokens</h3>
-                <form>
+                <form class="form-get__form" method="get" action="">
                   <div class="form-get__item">
-                    <input class="form-get__input _email" type="text" placeholder="Your email">
+                    <input class="form-get__input _email" type="email" name="email" placeholder="Your email" required>
                   </div>
                   <div class="form-get__item">
-                    <input class="form-get__input" type="password" placeholder="Your password">
+                    <input class="form-get__input" type="password" name="password" placeholder="Your password" required>
                   </div>
                   <div class="form-get__button">
                     <button class="btn btn_submit" type="submit">Get OTN tokens</button>

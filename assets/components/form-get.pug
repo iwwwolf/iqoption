@@ -1,11 +1,11 @@
 .form-get
 	h3.
 		Trade and get OTN tokens
-	form
+	form.form-get__form(method="get", action="")
 		.form-get__item
-			input.form-get__input._email(type="text", placeholder="Your email")
+			input.form-get__input._email(type="email", name="email", placeholder="Your email", required)
 		.form-get__item
-			input.form-get__input(type="password", placeholder="Your password")
+			input.form-get__input(type="password", name="password", placeholder="Your password", required)
 		.form-get__button
 			button.btn.btn_submit(type="submit").
 				Get OTN tokens
